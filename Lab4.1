@@ -1,0 +1,33 @@
+Module Main ()
+	//declare variables
+	1.	Declare String clientName
+	2.	Declare Real feetUTP
+	3.	Declare Real subTotal
+	4.	Declare Real taxCost
+	5.	Declare Real totalCost
+	
+	//Module Calls
+	6.	Call inputData(feetUTP, clientName)
+	7.	Call calcCosts(subTotal, taxCost, totalCost, feetUTP)
+	8.	Call displayBill(clientName, totalCost)
+	
+End Main
+
+Module inputData (Real Ref feetUTP, String Ref clientName)
+	9. Display "What is the company name?"
+	10. Input clientName
+	11. Display "How many feet of cable was installed?"
+	12. Input feetUTP
+End Module
+
+Module calcCosts (Real Ref subTotal, Real Ref taxCost, Real Ref totalCost, _
+						Real Val feetUTP)
+	14. Set subTotal = feetUTP * .21
+	15. Set taxCost = subTotal * .06
+	16. Set totalCost = subTotal + taxCost
+End Module
+
+Module displayBill (String Val clientName, Real Val totalCost)
+	18. Display "The client name is ", clientName
+	19. Display "The total cost will be $", totalCost
+End Module
